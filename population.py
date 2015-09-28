@@ -1,10 +1,13 @@
+import numpy as np
+
 def census(populations, n, target):
 
   # Initializing a matrix with 0 to target columns and 0 to (n - 1) rows.
   # Columns represent all the different sums up to the target.
   # Rows represent the given array integers.
 
-  matrix = [[0 for x in range(target + 1)] for x in range(n)] 
+  matrix = np.array([[0 for x in range(target + 1)] for x in range(n)])
+
 
   # Initializes first column to 1; can always make a set whose sum = 0 with an empty set.
   for rowNum in range(n): 
@@ -30,10 +33,14 @@ def census(populations, n, target):
 
         matrix[rowNum][columnNum] = 0
 
-  print(matrix[n-1][target]) #Prints 1 if a subset exists that adds to the target.
+  if (matrix[n-1][target] == 1): #1 if a subset exists that adds to the target.
+    print('Yes, there asdasd a subset of these areas where a total of exactly %d people live.' %(target))
+  else:
+    print('No, there does not exist a subset of these areas where a total of exactly %d people live.' %(target))
 
 def main():
   # An array containing the populations of the 26 largest metro areas.
+  
   populations = [12828837, 9461105, 6371773,
   5965343, 5946800, 5582170,
   5564635, 5268860, 4552402,
@@ -52,11 +59,10 @@ def main():
 
   # Testing w/ smaller numbers.
   '''
-  populations = [1,2,3,4,5]
+  populations = [1,2,4,5,9]
   metroAreas= len(populations)
-  target = 8
+  target = 15
   '''
-
   census(populations, metroAreas, target)
 
 main()
