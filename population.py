@@ -1,4 +1,4 @@
-def positiveSubsetSum(populations, n, target):
+def census(populations, n, target):
 
   # Initializing a matrix with 0 to target columns and 0 to (n - 1) rows.
   # Columns represent all the different sums up to the target.
@@ -45,19 +45,19 @@ def main():
   2134411]
 
   # Number of metro areas (26).
-   metroAreas= len(populations)
+  metroAreas= len(populations)
 
   # The target value.
   target = 100000000
 
   # Testing w/ smaller numbers.
   '''
-  populations = [1,2,4,5,9]
+  populations = [1,2,3,4,5]
   metroAreas= len(populations)
-  target = 15
+  target = 8
   '''
 
-  positiveSubsetSum(populations, numCities, metroAreas)
+  census(populations, metroAreas, target)
 
 main()
 
