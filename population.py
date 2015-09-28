@@ -34,7 +34,7 @@ def census(populations, n, target):
         matrix[rowNum][columnNum] = 0
 
   if (matrix[n-1][target] == 1): #1 if a subset exists that adds to the target.
-    print('Yes, there asdasd a subset of these areas where a total of exactly %d people live.' %(target))
+    print('Yes, there is a subset of these areas where a total of exactly %d people live.' %(target))
   else:
     print('No, there does not exist a subset of these areas where a total of exactly %d people live.' %(target))
 
